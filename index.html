@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0b0a1a">
+  <meta name="description" content="个人学习打卡工具 - 记录每一天的成长">
+  <title>成长打卡 · 每日精进</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+
+  <div id="app">
+    <!-- 顶部导航 -->
+    <header class="header">
+      <div class="header-left">
+        <div class="app-logo">✦</div>
+        <span class="app-title">成长打卡</span>
+      </div>
+      <div class="header-date"></div>
+    </header>
+
+    <!-- 页面容器 -->
+    <main id="page-home" class="page active"></main>
+    <main id="page-checkin" class="page"></main>
+    <main id="page-timer" class="page"></main>
+    <main id="page-stats" class="page"></main>
+
+    <!-- 底部导航 -->
+    <nav class="nav-bar"></nav>
+  </div>
+
+  <script src="js/quotes.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').catch(function(err) {
+        console.log('SW registration failed:', err);
+      });
+    }
+  </script>
+</body>
+</html>
